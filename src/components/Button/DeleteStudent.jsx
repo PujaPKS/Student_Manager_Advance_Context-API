@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Button.css';
+import StudentContext from '../../context/StudentContext';
 
-const DeleteStudent = ({ student, setStudents }) => {
+const DeleteStudent = ({ student }) => {
+  const { students, setStudents } = useContext(StudentContext);
   const handleDelete = () => {
-    const filteredStudents = setStudents((prevStudents) => prevStudents.filter((prevStudent) => prevStudent.id !== student.id));
+    // Removing the student from the state
+    const updatedStudents = students.filter((s) => s.id !== student.id);
+    setStudents(updatedStudents);
+
+    // Updating the localStorage after removal
+    localStorage.setItem('students', JSON.stringify(updatedStudents));
   };
 
   return (

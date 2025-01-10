@@ -1,52 +1,55 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Header from './components/Header/Header';
 import StudentForm from './components/Form/StudentForm';
 import StudentList from './components/List/StudentList';
 import './App.css';
+import StudentContext from './context/StudentContext';
 
-function App() {
-  const [students, setStudents] = useState([]);
-  const [editingStudent, setEditingStudent] = useState(null);
-  const [formData, setFormData] = useState({
-    name: '',
-    mobileNo: '',
-    address: '',
-  });
-  const [formVisible, setFormVisible] = useState(false);
+const App = () => {
+  // const [students, setStudents] = useState([]);
+  // const [editingStudent, setEditingStudent] = useState(null);
+  // const [formData, setFormData] = useState({
+  //   name: '',
+  //   mobileNo: '',
+  //   address: '',
+  // });
+  // const [formVisible, setFormVisible] = useState(false);
 
-  const toggleForm = () => {
-    setFormVisible((prev) => !prev);
-    if (!formVisible) {
-      setEditingStudent(null);
-      setFormData({
-        name: '',
-        mobileNo: '',
-        address: '',
-      });
-    }
-  };
+  // const toggleForm = () => {
+  //   setFormVisible((prev) => !prev);
+  //   if (!formVisible) {
+  //     setEditingStudent(null);
+  //     setFormData({
+  //       name: '',
+  //       mobileNo: '',
+  //       address: '',
+  //     });
+  //   }
+  // };
 
-  const closeForm = () => {
-    setFormVisible(false);
-    setEditingStudent(null);
-    setFormData({ name: '', mobileNo: '', address: '' });
-  };
+  // const closeForm = () => {
+  //   setFormVisible(false);
+  //   setEditingStudent(null);
+  //   setFormData({ name: '', mobileNo: '', address: '' });
+  // };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (editingStudent) {
-      const updatedStudents = students.map((student) =>
-        student.id === editingStudent.id ? { ...formData, id: student.id } : student
-      );
-      setStudents(updatedStudents);
-      setEditingStudent(null);
-    } else {
-      const newStudent = { ...formData, id: students.length + 1 };
-      setStudents([...students, newStudent]);
-    }
-    setFormData({ name: '', mobileNo: '', address: '' });
-    setFormVisible(false);
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (editingStudent) {
+  //     const updatedStudents = students.map((student) =>
+  //       student.id === editingStudent.id ? { ...formData, id: student.id } : student
+  //     );
+  //     setStudents(updatedStudents);
+  //     setEditingStudent(null);
+  //   } else {
+  //     const newStudent = { ...formData, id: students.length + 1 };
+  //     setStudents([...students, newStudent]);
+  //   }
+  //   setFormData({ name: '', mobileNo: '', address: '' });
+  //   setFormVisible(false);
+  // };
+
+  const {students, setStudents, formData, setFormData, formVisible, toggleForm, closeForm, handleSubmit, setEditingStudent, editingStudent, setFormVisible} = useContext(StudentContext);
 
   return (
     <div>

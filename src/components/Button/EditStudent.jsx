@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Button.css';
+import StudentContext from '../../context/StudentContext';
 
-const EditStudent = ({ student, setEditingStudent, setFormData, setFormVisible }) => {
+const EditStudent = ({ student }) => {
+  
+  const {setEditingStudent, setFormData, setFormVisible } = useContext(StudentContext);
   const handleEdit = () => {
     console.log("Editing student:", student); // Debugging log
     setEditingStudent(student);

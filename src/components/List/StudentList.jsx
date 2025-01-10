@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useContext} from 'react';
 import './StudentList.css';
 import EditStudent from '../Button/EditStudent';
 import DeleteStudent from '../Button/DeleteStudent';
+import StudentContext from '../../context/StudentContext';
 
-function StudentList({ students, setEditingStudent, setFormData, setFormVisible, setStudents }) {
+const StudentList = () => { 
+  const { students, setEditingStudent, setFormData, setFormVisible, setStudents } = useContext(StudentContext);
   return (
     <div>
       <h2>All Students</h2>

@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './StudentForm.css'
+import StudentContext from '../../context/StudentContext';
 
-const StudentForm = ({ handleSubmit, formData, setFormData, editingStudent, closeForm }) => {
+const StudentForm = () => {
+
+  const { handleSubmit, formData, setFormData, editingStudent, closeForm } = useContext(StudentContext);
 
   return (
     <div className="modal-overlay">
