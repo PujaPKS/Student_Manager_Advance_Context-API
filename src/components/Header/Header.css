@@ -4,3 +4,13 @@ h1{
     color: blueviolet;
     font-size: 40px;
 }
+
+.form-btn{
+    background-color: #4CAF50;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 900;
+    border-radius: 2rem;
+    margin-left: 46%;
+    margin-bottom: 2rem;
+}

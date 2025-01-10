@@ -25,3 +25,42 @@
   font-size: 20px;
   font-family: 'Times New Roman', Times, serif;
 }
+
+/* Styling for the table */
+.students-table {
+  width: 100%; /* Full width of the container */
+  border-collapse: collapse; /* Removes spacing between cells */
+  margin: 20px 0; /* Adds vertical spacing */
+}
+
+.students-table th,
+.students-table td {
+  border: 1px solid #ddd; /* Adds a border to cells */
+  padding: 10px; /* Adds padding for better readability */
+  text-align: left; /* Aligns text to the left */
+}
+
+.students-table th {
+  background-color: #f4f4f4; /* Light background for table headers */
+  font-weight: bold; /* Makes header text bold */
+}
+
+.students-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9; /* Alternates row colors for readability */
+}
+
+.students-table tbody tr:hover {
+  background-color: #f1f1f1; /* Highlights row on hover */
+}
+
+/* General styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  width: 90%; /* Adjust width to fit nicely on the screen */
+  margin: 0 auto; /* Centers the content */
+}
