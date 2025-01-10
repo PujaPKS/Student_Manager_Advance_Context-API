@@ -1,4 +1,5 @@
 import React from 'react';
+import './Button.css';
 
 const DeleteStudent = ({ student, setStudents }) => {
   const handleDelete = () => {
@@ -6,7 +7,7 @@ const DeleteStudent = ({ student, setStudents }) => {
   };
 
   return (
-    <button onClick={handleDelete}>Delete</button>
+    <button onClick={handleDelete} className='delete'>Delete</button>
   );
 };
 

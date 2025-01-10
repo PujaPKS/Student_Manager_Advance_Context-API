@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Header from './components/Header/Header';
 import StudentForm from './components/Form/StudentForm';
-import EditStudent from './components/Button/EditStudent';
-import DeleteStudent from './components/Button/DeleteStudent';
+import StudentList from './components/List/StudentList';
 import './App.css';
 
 function App() {
@@ -62,48 +61,15 @@ function App() {
           closeForm={closeForm}
         />
       )}
-      <h2>All Students</h2>
-      <table className="students-table">
-        {students.length > 0 && (
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Mobile No</th>
-              <th>Address</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-        )}
-        <tbody>
-          {students.length > 0 ? (
-            students.map((student) => (
-              <tr key={student.id}>
-                <td>{student.name}</td>
-                <td>{student.mobileNo}</td>
-                <td>{student.address}</td>
-                <td>
-                  <EditStudent
-                    student={student}
-                    setEditingStudent={setEditingStudent}
-                    setFormData={setFormData}
-                    setFormVisible={setFormVisible}
-                  />
-                  <DeleteStudent student={student} setStudents={setStudents} />
-                </td>
-              </tr>
-            ))
-          ) : (
-            <tr>
-              <td colSpan="4" style={{ textAlign: "center", padding: "20px" }}>
-                No students added yet.
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+      <StudentList
+        students={students}
+        setEditingStudent={setEditingStudent}
+        setFormData={setFormData}
+        setFormVisible={setFormVisible}
+        setStudents={setStudents}
+      />
     </div>
   );
 }
 
 export default App;
-

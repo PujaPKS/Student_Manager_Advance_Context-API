@@ -1,0 +1,62 @@
+/* General container styling for the StudentList */
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+/* Header styling */
+.students-table thead th {
+  background-color: #f4f4f4;
+  color: #333;
+  font-weight: bold;
+  padding: 10px;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Body row styling */
+.students-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.students-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.students-table tbody td {
+  padding: 10px;
+}
+
+/* No students message styling */
+.no-students-message {
+  text-align: center;
+  font-style: italic;
+  padding: 20px;
+  color: #777;
+}
+
+/* Action buttons styling */
+.students-table .actions {
+  display: flex;
+  gap: 10px;
+}
+
+.students-table .actions button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.students-table .actions .edit-btn {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.students-table .actions .delete-btn {
+  background-color: #f44336;
+  color: #fff;
+}
